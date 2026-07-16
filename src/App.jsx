@@ -1,5 +1,7 @@
 // import './App.css'
 import { useState } from "react";
+import ToDoList from "./ToDoList.jsx";
+import ToDoForm from "./ToDoForm.jsx";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -9,14 +11,8 @@ function App() {
     {id: 4, content: 'Task 4', done: false},
     {id: 5, content: 'Task 5', done: false},
   ]);
-  const [newTask, setNewTask] = useState('');
 
-  function handleInput(e) {
-    setNewTask(e.target.value);
-  }
-
-  function handleAddTask() {
-    if (newTask.trim() === '') return;
+  function onAddTask(newTask) {
     const addedTask = {
       id: Date.now(),
       content: newTask,
@@ -24,13 +20,6 @@ function App() {
     };
     const updatedTasks = [...tasks, addedTask];
     setTasks(updatedTasks);
-    setNewTask('');
-  }
-
-  function handleKeyDown(e) {
-    if (e.key === 'Enter') {
-      handleAddTask();
-    }
   }
 
   function toggleTask(id) {
@@ -51,15 +40,8 @@ function App() {
   return (
     <>
       <h2>To Do List</h2>
-      <input type="text" value={newTask} onChange={handleInput} onKeyDown={handleKeyDown}/>
-      <button type="button" onClick={handleAddTask}>Add Task</button>
-      <ul>
-        {tasks.map((task) => (<li key={task.id}>
-          <input type="checkbox" id={task.id} checked={task.done} onChange={() => toggleTask(task.id)}/>
-          <label htmlFor={task.id}>{task.content}</label>
-          <button type="button" onClick={() => handleDelete(task.id)}>Delete</button>
-        </li>))}
-      </ul>
+      <ToDoForm onAddTask={onAddTask} />
+      <ToDoList tasks={tasks} toggleTask={toggleTask} handleDelete={handleDelete} />
     </>
   )
 }
