@@ -37,11 +37,15 @@ function App() {
     setTasks(deletedList);
   }
 
+  const activeTasks = tasks.filter(task => !task.done);
+  const completedTasks = tasks.filter(task => task.done);
+
   return (
     <>
       <h2>To Do List</h2>
       <ToDoForm onAddTask={onAddTask} />
-      <ToDoList tasks={tasks} toggleTask={toggleTask} handleDelete={handleDelete} />
+      <div><h3>ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask} handleDelete={handleDelete} /></div>
+      <div><h3>COMPLETED TASKS</h3><ToDoList tasks={completedTasks} toggleTask={toggleTask} handleDelete={handleDelete} /></div>
     </>
   )
 }
