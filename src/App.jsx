@@ -49,15 +49,19 @@ function App() {
   const activeTasks = tasks.filter(task => !task.done);
   const completedTasks = tasks.filter(task => task.done);
 
+  const activeMessage = 'No active tasks — enjoy the calm.';
+  const completedMessage = 'Nothing finished yet. Let\'s start, shall we?';
+
   return (
     <>
       <h2>To Do List</h2>
       <ToDoForm onAddTask={onAddTask}/>
       <div><h3>ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask} handleDelete={handleDelete}
-                                          handleEditTask={handleEditTask}/>
+                                          handleEditTask={handleEditTask} message={activeMessage}/>
       </div>
       <div><h3>COMPLETED TASKS</h3><ToDoList tasks={completedTasks} toggleTask={toggleTask}
-                                             handleDelete={handleDelete} handleEditTask={handleEditTask}/></div>
+                                             handleDelete={handleDelete} handleEditTask={handleEditTask}
+                                             message={completedMessage}/></div>
     </>
   )
 }
