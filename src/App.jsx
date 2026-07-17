@@ -1,23 +1,15 @@
 // import './App.css'
-import { useState, useEffect } from "react";
+import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
 import ToDoForm from "./ToDoForm.jsx";
 
 function App() {
-
-  const [tasks, setTasks] = useState(() => {
-    return JSON.parse(localStorage.getItem('tasks')) ?? [
-      {id: 1, content: 'Task 1', done: false},
-      {id: 2, content: 'Task 2', done: false},
-      {id: 3, content: 'Task 3', done: false},
-      {id: 4, content: 'Task 4', done: true},
-      {id: 5, content: 'Task 5', done: true},
-    ]
-  });
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+  const [tasks, setTasks] = useLocalStorage('tasks', [
+    {id: 1, content: 'Task 1', done: false},
+    {id: 2, content: 'Task 2', done: false},
+    {id: 3, content: 'Task 3', done: false},
+    {id: 4, content: 'Task 4', done: true},
+    {id: 5, content: 'Task 5', done: true},]);
 
   function onAddTask(newTask) {
     const addedTask = {
