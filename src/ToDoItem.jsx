@@ -3,10 +3,12 @@ import {useState} from "react";
 function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 	const [newContent, setNewContent] = useState('');
 	const [isEdit, setIsEdit] = useState(false);
+
 	function toggleEdit() {
 		setIsEdit(!isEdit);
 		setNewContent(task.content);
 	}
+
 	function handleEditInput(e) {
 		setNewContent(e.target.value);
 	}
@@ -23,7 +25,7 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 	}
 
 	return (isEdit ? <li>
-				<input type="text" value={newContent} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit} />
+				<input type="text" value={newContent} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
 				<button type="button" onClick={editContent}>Save</button>
 			</li> :
 			<li>
