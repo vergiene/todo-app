@@ -1,8 +1,16 @@
-import {useState} from "react";
+import { useState, useEffect, useRef} from "react";
 
 function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 	const [newContent, setNewContent] = useState('');
 	const [isEdit, setIsEdit] = useState(false);
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		if (isEdit) {
+			inputRef.current.focus();
+			inputRef.current.select();
+		}
+	}, [isEdit]);
 
 	function toggleEdit() {
 		setIsEdit(!isEdit);
@@ -25,7 +33,7 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 	}
 
 	return (isEdit ? <li>
-				<input type="text" value={newContent} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
+				<input type="text" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
 				<button type="button" onClick={editContent}>Save</button>
 			</li> :
 			<li>
