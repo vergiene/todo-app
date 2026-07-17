@@ -46,6 +46,10 @@ function App() {
     setTasks(updatedList);
   }
 
+  function handleClearAll() {
+    setTasks([]);
+  }
+
   const activeTasks = tasks.filter(task => !task.done);
   const completedTasks = tasks.filter(task => task.done);
 
@@ -56,6 +60,7 @@ function App() {
     <>
       <h2>To Do List</h2>
       <ToDoForm onAddTask={onAddTask}/>
+      <button type="button" onClick={handleClearAll} disabled={!tasks.length}>Clear all</button>
       <div><h3>ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask} handleDelete={handleDelete}
                                           handleEditTask={handleEditTask} message={activeMessage}/>
       </div>
