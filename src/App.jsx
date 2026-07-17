@@ -2,6 +2,7 @@
 import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
 import ToDoForm from "./ToDoForm.jsx";
+import Clock from "./Clock.jsx";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage('tasks', [
@@ -59,6 +60,7 @@ function App() {
   return (
     <>
       <h2>To Do List</h2>
+      <Clock/>
       <ToDoForm onAddTask={onAddTask}/>
       <button type="button" onClick={handleClearAll} disabled={!tasks.length}>Clear all</button>
       <div><h3>ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask} handleDelete={handleDelete}
