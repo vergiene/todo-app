@@ -35,9 +35,9 @@ function ToDoForm({ onAddTask }) {
 	return (isBoxNeeded ?
 			<>
 				<input type="text" value={newTask} ref={inputRef} onChange={handleInput} onKeyDown={handleKeyDown}/>
-				<button type="button" onClick={submitTask}>Add Task</button>
+				<button className="saveButton" type="button" onClick={submitTask}>Add Task</button>
 			</> :
-			<button onClick={toggleBoxNeeded}>+</button>
+			<button className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}>+</button>
 	)
 }
 

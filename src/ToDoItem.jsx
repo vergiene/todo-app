@@ -36,11 +36,15 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 				<input type="text" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
 				<button type="button" onClick={editContent}>Save</button>
 			</li> :
-			<li>
+			<li className="taskRow">
+				<div className="taskInfo">
 				<input type="checkbox" id={task.id} checked={task.done} onChange={() => toggleTask(task.id)}/>
 				<label htmlFor={task.id}>{task.content}</label>
-				<button type="button" onClick={() => handleDelete(task.id)}>Delete</button>
-				<button type="button" onClick={toggleEdit}>Edit</button>
+				</div>
+				<div className="taskActions">
+				<button className="taskButton" type="button" onClick={() => handleDelete(task.id)}>Delete</button>
+				<button className="taskButton" type="button" onClick={toggleEdit}>Edit</button>
+				</div>
 			</li>
 	)
 }

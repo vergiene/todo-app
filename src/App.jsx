@@ -1,4 +1,4 @@
-// import './App.css'
+import './App.css'
 import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
 import ToDoForm from "./ToDoForm.jsx";
@@ -58,18 +58,26 @@ function App() {
   const completedMessage = 'Nothing finished yet. Let\'s start, shall we?';
 
   return (
-    <>
-      <h2>To Do List</h2>
-      <Clock/>
-      <ToDoForm onAddTask={onAddTask}/>
-      <button type="button" onClick={handleClearAll} disabled={!tasks.length}>Clear all</button>
-      <div><h3>ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask} handleDelete={handleDelete}
-                                          handleEditTask={handleEditTask} message={activeMessage}/>
+    <div className="App">
+      <div className="header">
+        <Clock/>
+        <h2 className="title">To Do List</h2>
+        <ToDoForm onAddTask={onAddTask}/>
+        <button className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}>Clear all
+        </button>
       </div>
-      <div><h3>COMPLETED TASKS</h3><ToDoList tasks={completedTasks} toggleTask={toggleTask}
-                                             handleDelete={handleDelete} handleEditTask={handleEditTask}
-                                             message={completedMessage}/></div>
-    </>
+      <div className="content">
+        <div className="activeTasks"><h3 className="cardTitle">ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask}
+                                                                    handleDelete={handleDelete}
+                                                                    handleEditTask={handleEditTask}
+                                                                    message={activeMessage}/>
+        </div>
+        <div className="completedTasks"><h3 className="cardTitle">COMPLETED TASKS</h3><ToDoList tasks={completedTasks} toggleTask={toggleTask}
+                                                                          handleDelete={handleDelete}
+                                                                          handleEditTask={handleEditTask}
+                                                                          message={completedMessage}/></div>
+      </div>
+    </div>
   )
 }
 
