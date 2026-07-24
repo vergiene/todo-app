@@ -1,16 +1,26 @@
 .App {
-  max-width: 2000px;
-  margin: 0 auto;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Poppins, sans-serif;
+  color: maroon;
 }
 
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: peachpuff;
-  border-radius: 15px;
+  border-radius: 35px;
   margin: 40px 30px 0 30px;
+  min-height: 100px;
+  background: rgba(253, 246, 240, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(253, 246, 240, 0.5);
+}
+
+.title {
+  background: linear-gradient(to right, lightsalmon, lightcoral, palevioletred);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .content {
@@ -21,25 +31,32 @@
 }
 
 .activeTasks, .completedTasks {
-  background: peachpuff;
-  border-radius: 15px;
+  border-radius: 35px;
   padding: 10px;
   flex: 1 1 280px;
-  min-width: 280px;
+  min-width: 250px;
   box-sizing: border-box;
+  max-height: 400px;
+  overflow-y: scroll;
+  background: rgba(253, 246, 240, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(253, 246, 240, 0.5);
 }
 
-.cardTitle, .emptyMessage {
+.cardTitle, .emptyMessage, .title {
   text-align: center;
+  font-family: Quicksand, sans-serif;
 }
 
 .taskRow {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background: lightsalmon;
+  background: rgba(253, 246, 240, 0.6);
+  border: 1px solid rgba(253, 246, 240, 0.8);
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 20px;
   margin: 10px;
 }
 
@@ -59,4 +76,48 @@
 
 .tasksList {
   padding-inline-start: 0;
+}
+
+.clearAllButton, .addNewTaskButton {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNewTaskButton {
+  background: rgba(255, 160, 122, 0.6);
+  border: 1px solid rgba(255, 160, 122, 0.7);
+  backdrop-filter: blur(20px);
+  --webkit-backdrop-filter: blur(20px);
+  color: white;
+}
+
+.clearAllButton {
+  background: rgba(253, 170, 186, 0.6);
+  border: 1px solid rgba(253, 170, 186, 0.7);
+  backdrop-filter: blur(20px);
+  --webkit-backdrop-filter: blur(20px);
+  color: maroon;
+}
+
+.taskButton {
+  background: none;
+  border: none;
+  color: maroon;
+}
+
+.saveButton {
+  height: 25px;
+  width: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: maroon;
 }

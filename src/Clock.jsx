@@ -12,12 +12,11 @@ function Clock() {
 		const monthName = monthNames[month];
 		const hour = date.getHours().toString().padStart(2, '0');
 		const minute = date.getMinutes().toString().padStart(2, '0');
-		const second = date.getSeconds().toString().padStart(2, '0');
-		return `${day} of ${monthName}, ${dayName} | ${hour}:${minute}:${second}`;
+		return `${day} of ${monthName}, ${dayName} | ${hour}:${minute}`;
 	}
 
 	useEffect(() => {
-		const id = setInterval(() => {setDate(new Date())}, 1000);
+		const id = setInterval(() => {setDate(new Date())}, 60000);
 		return () => {
 			clearInterval(id);
 		};

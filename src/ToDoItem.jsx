@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef} from "react";
+import { Trash, Pen, Check } from 'lucide-react'
 
 function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 	const [newContent, setNewContent] = useState('');
@@ -34,16 +35,16 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 
 	return (isEdit ? <li>
 				<input type="text" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
-				<button type="button" onClick={editContent}>Save</button>
+				<button className="saveButton" type="button" onClick={editContent}><Check size={15}/></button>
 			</li> :
 			<li className="taskRow">
 				<div className="taskInfo">
-				<input type="checkbox" id={task.id} checked={task.done} onChange={() => toggleTask(task.id)}/>
-				<label htmlFor={task.id}>{task.content}</label>
+					<input type="checkbox" id={task.id} checked={task.done} onChange={() => toggleTask(task.id)}/>
+					<label htmlFor={task.id}>{task.content}</label>
 				</div>
 				<div className="taskActions">
-				<button className="taskButton" type="button" onClick={() => handleDelete(task.id)}>Delete</button>
-				<button className="taskButton" type="button" onClick={toggleEdit}>Edit</button>
+					<button className="taskButton" type="button" onClick={toggleEdit}><Pen size={15}/></button>
+					<button className="taskButton" type="button" onClick={() => handleDelete(task.id)}><Trash size={15}/></button>
 				</div>
 			</li>
 	)

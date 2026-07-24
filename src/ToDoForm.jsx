@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from "react";
+import { Plus, Check } from 'lucide-react';
 
 function ToDoForm({ onAddTask }) {
 	const [newTask, setNewTask] = useState('');
@@ -35,9 +36,9 @@ function ToDoForm({ onAddTask }) {
 	return (isBoxNeeded ?
 			<>
 				<input type="text" value={newTask} ref={inputRef} onChange={handleInput} onKeyDown={handleKeyDown}/>
-				<button className="saveButton" type="button" onClick={submitTask}>Add Task</button>
+				<button className="saveButton" type="button" onClick={submitTask}><Check/></button>
 			</> :
-			<button className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}>+</button>
+			<button className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}><Plus /></button>
 	)
 }
 

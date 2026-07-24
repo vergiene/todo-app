@@ -3,6 +3,7 @@ import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
 import ToDoForm from "./ToDoForm.jsx";
 import Clock from "./Clock.jsx";
+import { Trash2 } from 'lucide-react'
 
 function App() {
   const [tasks, setTasks] = useLocalStorage('tasks', [
@@ -61,21 +62,24 @@ function App() {
     <div className="App">
       <div className="header">
         <Clock/>
-        <h2 className="title">To Do List</h2>
+        <h2 className="title">TO DO LIST</h2>
         <ToDoForm onAddTask={onAddTask}/>
-        <button className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}>Clear all
+        <button className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}><Trash2/>
         </button>
       </div>
       <div className="content">
-        <div className="activeTasks"><h3 className="cardTitle">ACTIVE TASKS</h3><ToDoList tasks={activeTasks} toggleTask={toggleTask}
-                                                                    handleDelete={handleDelete}
-                                                                    handleEditTask={handleEditTask}
-                                                                    message={activeMessage}/>
+        <div className="activeTasks"><h3 className="cardTitle">ACTIVE TASKS</h3><ToDoList tasks={activeTasks}
+                                                                                          toggleTask={toggleTask}
+                                                                                          handleDelete={handleDelete}
+                                                                                          handleEditTask={handleEditTask}
+                                                                                          message={activeMessage}/>
         </div>
-        <div className="completedTasks"><h3 className="cardTitle">COMPLETED TASKS</h3><ToDoList tasks={completedTasks} toggleTask={toggleTask}
-                                                                          handleDelete={handleDelete}
-                                                                          handleEditTask={handleEditTask}
-                                                                          message={completedMessage}/></div>
+        <div className="completedTasks"><h3 className="cardTitle">COMPLETED TASKS</h3><ToDoList tasks={completedTasks}
+                                                                                                toggleTask={toggleTask}
+                                                                                                handleDelete={handleDelete}
+                                                                                                handleEditTask={handleEditTask}
+                                                                                                message={completedMessage}/>
+        </div>
       </div>
     </div>
   )
