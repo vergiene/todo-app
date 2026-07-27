@@ -36,9 +36,12 @@ function ToDoForm({ onAddTask }) {
 	return (isBoxNeeded ?
 			<>
 				<input type="text" value={newTask} ref={inputRef} onChange={handleInput} onKeyDown={handleKeyDown}/>
-				<button className="saveButton" type="button" onClick={submitTask}><Check/></button>
+				<button aria-label="Save changes" className="saveButton" type="button" onClick={submitTask}><Check/></button>
 			</> :
-			<button className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}><Plus /></button>
+		<div className="buttonLabel">
+			<button aria-label="Add Task" className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}><Plus /></button>
+			<span >Add Task</span>
+		</div>
 	)
 }
 

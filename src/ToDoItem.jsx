@@ -35,7 +35,7 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 
 	return (isEdit ? <li>
 				<input type="text" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
-				<button className="saveButton" type="button" onClick={editContent}><Check size={15}/></button>
+				<button aria-label="Save changes" className="saveButton" type="button" onClick={editContent}><Check size={15}/></button>
 			</li> :
 			<li className="taskRow">
 				<div className="taskInfo">
@@ -43,8 +43,8 @@ function ToDoItem({ task, toggleTask, handleDelete, handleEditTask }) {
 					<label htmlFor={task.id}>{task.content}</label>
 				</div>
 				<div className="taskActions">
-					<button className="taskButton" type="button" onClick={toggleEdit}><Pen size={15}/></button>
-					<button className="taskButton" type="button" onClick={() => handleDelete(task.id)}><Trash size={15}/></button>
+					<button aria-label="Edit task" className="taskButton" type="button" onClick={toggleEdit}><Pen size={15}/></button>
+					<button aria-label="Delete task" className="taskButton" type="button" onClick={() => handleDelete(task.id)}><Trash size={15}/></button>
 				</div>
 			</li>
 	)

@@ -61,11 +61,18 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <Clock/>
+        <div className="clock">
+          <Clock/>
+        </div>
         <h2 className="title">TO DO LIST</h2>
-        <ToDoForm onAddTask={onAddTask}/>
-        <button className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}><Trash2/>
-        </button>
+        <div className="headerActions">
+          <ToDoForm onAddTask={onAddTask}/>
+          <div className="buttonLabel">
+            <button aria-label="Clear All" className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}><Trash2/>
+            </button>
+            <span>Clear All</span>
+          </div>
+        </div>
       </div>
       <div className="content">
         <div className="activeTasks"><h3 className="cardTitle">ACTIVE TASKS</h3><ToDoList tasks={activeTasks}
