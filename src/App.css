@@ -14,14 +14,15 @@
   min-height: 70px;
   background: rgba(253, 246, 240, 0.3);
   border: 1px solid rgba(253, 246, 240, 0.5);
+  box-shadow: 0 5px 15px -5px rgba(128, 0, 0, 0.4);
 }
 
 .header::before {
   content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 35px;
   z-index: -1;
 }
@@ -58,16 +59,17 @@
 }
 
 .clearAllButton, .addNewTaskButton {
-  height: 50px;
-  width: 50px;
+  height: 44px;
+  width: 44px;
   border-radius: 50%;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(20px);
-  --webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  --webkit-backdrop-filter: blur(15px);
   color: maroon;
+  box-shadow: 0 5px 5px -5px rgba(128, 0, 0, 0.4);
 }
 
 .addNewTaskButton {
@@ -101,9 +103,10 @@
   max-height: 400px;
   overflow-y: scroll;
   background: rgba(253, 246, 240, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(253, 246, 240, 0.5);
+  box-shadow: 0 5px 15px -5px rgba(128, 0, 0, 0.4);
 }
 
 .taskRow {
@@ -115,6 +118,7 @@
   padding: 10px;
   border-radius: 20px;
   margin: 10px;
+  box-shadow: 0 5px 10px -5px rgba(128, 0, 0, 0.4);
 }
 
 .taskRow .taskButton {
@@ -162,11 +166,6 @@
     font-size: 18px;
   }
 
-  .clearAllButton, .addNewTaskButton {
-    height: 44px;
-    width: 44px;
-  }
-
   .title {
     font-size: 25px;
   }
@@ -199,8 +198,6 @@
     right: 0;
     margin: 20px;
     z-index: 1;
-    border: 1px solid rgba(255, 160, 122, 1);
-    color: white;
   }
 
   .activeTasks, .completedTasks {
