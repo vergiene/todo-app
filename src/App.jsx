@@ -70,7 +70,7 @@ function App() {
           <div className="buttonLabel">
             <button aria-label="Clear All" className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}><Trash2/>
             </button>
-            <span>Clear All</span>
+            <span className="label">Clear All</span>
           </div>
         </div>
       </div>

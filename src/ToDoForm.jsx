@@ -40,7 +40,7 @@ function ToDoForm({ onAddTask }) {
 			</> :
 		<div className="buttonLabel">
 			<button aria-label="Add Task" className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}><Plus /></button>
-			<span >Add Task</span>
+			<span className="label">Add Task</span>
 		</div>
 	)
 }

@@ -1,18 +1,12 @@
 import {useState, useEffect} from "react";
 
 function Clock() {
-	const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const [date, setDate] = useState(new Date());
 
 	function formatDate(date) {
-		const day = date.getDate().toString().padStart(2, '0');
-		const dayName = weekDays[date.getDay()];
-		const month = date.getMonth();
-		const monthName = monthNames[month];
-		const hour = date.getHours().toString().padStart(2, '0');
-		const minute = date.getMinutes().toString().padStart(2, '0');
-		return `${day} of ${monthName}, ${dayName} | ${hour}:${minute}`;
+		let timeNow = date.toLocaleTimeString("en-US", { hour12: true, hour: '2-digit', minute: '2-digit'});
+		let dayNow = date.toLocaleDateString("en-US", {day: "numeric", month: "short"})
+		return {day: dayNow, time: timeNow};
 	}
 
 	useEffect(() => {
@@ -26,7 +20,7 @@ function Clock() {
 
 	return (
 		<>
-			<h3>{dateNow}</h3>
+			<h3>{dateNow.day} | <br className="clockBreak"/> {dateNow.time}</h3>
 		</>
 	)
 }
