@@ -49,7 +49,9 @@ function App() {
   }
 
   function handleClearAll() {
-    setTasks([]);
+    const message = 'Do you want to clear all tasks? You won\'t be able to restore them.';
+    const result = window.confirm(message);
+    if (result) setTasks([]);
   }
 
   const activeTasks = tasks.filter(task => !task.done);
