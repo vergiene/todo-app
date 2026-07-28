@@ -3,6 +3,7 @@ import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
 import ToDoForm from "./ToDoForm.jsx";
 import Clock from "./Clock.jsx";
+import Theme from "./Theme.jsx";
 import { Trash2 } from 'lucide-react'
 
 function App() {
@@ -68,12 +69,13 @@ function App() {
         </div>
         <h2 className="title">TO DO LIST</h2>
         <div className="headerActions">
-          <ToDoForm onAddTask={onAddTask}/>
           <div className="buttonLabel">
             <button aria-label="Clear All" className="clearAllButton" type="button" onClick={handleClearAll} disabled={!tasks.length}><Trash2/>
             </button>
             <span className="label">Clear All</span>
           </div>
+          <Theme/>
+          <ToDoForm onAddTask={onAddTask}/>
         </div>
       </div>
       <div className="content">

@@ -47,7 +47,7 @@
 .headerActions {
   display: flex;
   flex: 1;
-  gap: 20px;
+  gap: 10px;
   justify-content: right;
 }
 
@@ -58,7 +58,7 @@
   font-size: 13px;
 }
 
-.clearAllButton, .addNewTaskButton {
+.clearAllButton, .addNewTaskButton, .themeButton {
   height: 44px;
   width: 44px;
   border-radius: 50%;
@@ -80,6 +80,11 @@
 .clearAllButton {
   background: rgba(253, 170, 186, 0.6);
   border: 1px solid rgba(253, 170, 186, 0.7);
+}
+
+.themeButton {
+  background: rgba(253, 90, 186, 0.6);
+  border: 1px solid rgba(253, 90, 186, 0.7);
 }
 
 .content {
@@ -181,7 +186,7 @@
 
 @media (max-width: 450px) {
   .header {
-    padding: 10px;
+    padding: 15px;
   }
 
   .clock {
@@ -189,7 +194,7 @@
   }
 
   .title {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .addNewTaskButton {
@@ -198,6 +203,11 @@
     right: 0;
     margin: 20px;
     z-index: 1;
+  }
+
+  .clearAllButton {
+    width: 44px;
+    height: 44px;
   }
 
   .activeTasks, .completedTasks {
