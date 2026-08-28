@@ -1,6 +1,7 @@
-.App {
+* {
   font-family: Poppins, sans-serif;
-  color: maroon;
+  color: var(--text-color);
+  box-sizing: border-box;
 }
 
 .header {
@@ -12,9 +13,9 @@
   margin: 40px 30px 0 30px;
   padding: 20px;
   min-height: 70px;
-  background: rgba(253, 246, 240, 0.3);
-  border: 1px solid rgba(253, 246, 240, 0.5);
-  box-shadow: 0 5px 15px -5px rgba(128, 0, 0, 0.4);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 5px 15px -5px var(--shadow-color);
 }
 
 .header::before {
@@ -37,7 +38,7 @@
 }
 
 .title {
-  background: linear-gradient(to right, lightsalmon, lightcoral, palevioletred);
+  background: linear-gradient(to right, var(--title-grad-1), var(--title-grad-2), var(--title-grad-3));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -68,23 +69,24 @@
   align-items: center;
   backdrop-filter: blur(15px);
   --webkit-backdrop-filter: blur(15px);
-  color: maroon;
-  box-shadow: 0 5px 5px -5px rgba(128, 0, 0, 0.4);
+  color: var(--text-color);
+  box-shadow: 0 5px 5px -5px var(--shadow-color);
+  cursor: pointer;
 }
 
 .addNewTaskButton {
-  background: rgba(255, 160, 122, 0.6);
-  border: 1px solid rgba(255, 160, 122, 0.7);
+  background: var(--button-add-bg);
+  border: 1px solid var(--button-add-border);
 }
 
 .clearAllButton {
-  background: rgba(253, 170, 186, 0.6);
-  border: 1px solid rgba(253, 170, 186, 0.7);
+  background: var(--button-clear-bg);
+  border: 1px solid var(--button-clear-border);
 }
 
 .themeButton {
-  background: rgba(253, 90, 186, 0.6);
-  border: 1px solid rgba(253, 90, 186, 0.7);
+  background: var(--button-theme-bg);
+  border: 1px solid var(--button-theme-border);
 }
 
 .content {
@@ -102,28 +104,28 @@
 .activeTasks, .completedTasks {
   border-radius: 35px;
   padding: 10px;
-  flex: 1 1 280px;
+  flex: 1 1 250px;
   min-width: 250px;
   box-sizing: border-box;
   max-height: 400px;
   overflow-y: scroll;
-  background: rgba(253, 246, 240, 0.3);
+  background: var(--glass-bg);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(253, 246, 240, 0.5);
-  box-shadow: 0 5px 15px -5px rgba(128, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 5px 15px -5px var(--shadow-color);
 }
 
 .taskRow {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background: rgba(253, 246, 240, 0.6);
-  border: 1px solid rgba(253, 246, 240, 0.8);
   padding: 10px;
   border-radius: 20px;
   margin: 10px;
-  box-shadow: 0 5px 10px -5px rgba(128, 0, 0, 0.4);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border-strong);
+  box-shadow: 0 5px 10px -5px var(--shadow-color);
 }
 
 .taskRow .taskButton {
@@ -147,7 +149,8 @@
 .taskButton {
   background: none;
   border: none;
-  color: maroon;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .saveButton {
@@ -159,7 +162,8 @@
   align-items: center;
   background: none;
   border: none;
-  color: maroon;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 @media (max-width: 565px) {

@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
-import { Plus, Check } from 'lucide-react';
+import {Plus, Check} from 'lucide-react';
 
-function ToDoForm({ onAddTask }) {
+function ToDoForm({onAddTask}) {
 	const [newTask, setNewTask] = useState('');
 	const [isBoxNeeded, setIsBoxNeeded] = useState(false);
 	const inputRef = useRef(null);

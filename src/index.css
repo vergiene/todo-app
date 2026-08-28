@@ -1,9 +1,72 @@
+/*body {*/
+/*  margin: 0;*/
+/*  min-height: 100vh;*/
+/*  background: rgb(253, 246, 240);*/
+/*  background: radial-gradient(circle 1100px at top right, pink, transparent),*/
+/*  radial-gradient(circle 900px at top left, lightsalmon, transparent),*/
+/*  radial-gradient(circle 900px at bottom right, sandybrown, transparent),*/
+/*  radial-gradient(circle 1100px at bottom left, rgb(255, 214, 232), transparent);*/
+/*}*/
+
+:root {
+  --bg-1: pink;
+  --bg-2: lightsalmon;
+  --bg-3: sandybrown;
+  --bg-4: rgb(255, 214, 232);
+  --bg-base: rgb(253, 246, 240);
+
+  --text-color: maroon;
+  --glass-bg: rgba(253, 246, 240, 0.3);
+  --glass-bg-strong: rgba(253, 246, 240, 0.6);
+  --glass-border: rgba(253, 246, 240, 0.5);
+  --glass-border-strong: rgba(253, 246, 240, 0.8);
+  --shadow-color: rgba(128, 0, 0, 0.4);
+
+  --button-add-bg: rgba(255, 160, 122, 0.6);
+  --button-add-border: rgba(255, 160, 122, 0.7);
+  --button-clear-bg: rgba(253, 170, 186, 0.6);
+  --button-clear-border: rgba(253, 170, 186, 0.7);
+  --button-theme-bg: rgba(253, 90, 186, 0.6);
+  --button-theme-border: rgba(253, 90, 186, 0.7);
+
+  --title-grad-1: lightsalmon;
+  --title-grad-2: lightcoral;
+  --title-grad-3: palevioletred;
+}
+
+[data-theme="dark"] {
+  --bg-1: #3a1f35;
+  --bg-2: #4a2a1f;
+  --bg-3: #5a3320;
+  --bg-4: #2a1a2f;
+  --bg-base: #1a1416;
+
+  --text-color: #f2d9e0;
+  --glass-bg: rgba(40, 25, 30, 0.4);
+  --glass-bg-strong: rgba(50, 30, 38, 0.6);
+  --glass-border: rgba(120, 70, 85, 0.4);
+  --glass-border-strong: rgba(140, 85, 100, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+
+  --button-add-bg: rgba(255, 160, 122, 0.25);
+  --button-add-border: rgba(255, 160, 122, 0.4);
+  --button-clear-bg: rgba(253, 170, 186, 0.25);
+  --button-clear-border: rgba(253, 170, 186, 0.4);
+  --button-theme-bg: rgba(253, 90, 186, 0.25);
+  --button-theme-border: rgba(253, 90, 186, 0.5);
+
+  --title-grad-1: #ff9a76;
+  --title-grad-2: #ff8fa3;
+  --title-grad-3: #f2a6c9;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: rgb(253, 246, 240);
-  background: radial-gradient(circle 1100px at top right, pink, transparent),
-  radial-gradient(circle 900px at top left, lightsalmon, transparent),
-  radial-gradient(circle 900px at bottom right, sandybrown, transparent),
-  radial-gradient(circle 1100px at bottom left, rgb(255, 214, 232), transparent);
+  background: var(--bg-base);
+  background: radial-gradient(circle 1100px at top right, var(--bg-1), transparent),
+  radial-gradient(circle 900px at top left, var(--bg-2), transparent),
+  radial-gradient(circle 900px at bottom right, var(--bg-3), transparent),
+  radial-gradient(circle 1100px at bottom left, var(--bg-4), transparent);
+  transition: background-color 0.3s ease;
 }

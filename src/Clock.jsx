@@ -4,13 +4,15 @@ function Clock() {
 	const [date, setDate] = useState(new Date());
 
 	function formatDate(date) {
-		let timeNow = date.toLocaleTimeString("en-US", { hour12: true, hour: '2-digit', minute: '2-digit'});
+		let timeNow = date.toLocaleTimeString("en-US", {hour12: true, hour: '2-digit', minute: '2-digit'});
 		let dayNow = date.toLocaleDateString("en-US", {day: "numeric", month: "short"})
 		return {day: dayNow, time: timeNow};
 	}
 
 	useEffect(() => {
-		const id = setInterval(() => {setDate(new Date())}, 60000);
+		const id = setInterval(() => {
+			setDate(new Date())
+		}, 60000);
 		return () => {
 			clearInterval(id);
 		};
