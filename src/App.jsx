@@ -1,6 +1,6 @@
-// TODO Нажатие на любое место на задаче открывает редактирование
-// TODO Input растягивает под размер родителя
 // TODO Закрытие input при нажатии на любое место
+// TODO Многострочный input через Shift/Enter
+// TODO Добавить md на input и на TaskRow
 import './App.css'
 import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";

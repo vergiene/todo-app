@@ -12,7 +12,7 @@ function Clock() {
 	useEffect(() => {
 		const id = setInterval(() => {
 			setDate(new Date())
-		}, 60000);
+		}, 1000);
 		return () => {
 			clearInterval(id);
 		};

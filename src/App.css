@@ -100,7 +100,7 @@
 
 .editTaskFormInput:focus,
 .addTaskFormInput:focus {
-  outline: 1px solid var(--glass-border-strong);
+  outline: 1px solid var(--glass-border-strong-input);
   outline-offset: -1px;
 }
 
