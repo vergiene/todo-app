@@ -20,6 +20,7 @@
   --glass-bg-strong: rgba(253, 246, 240, 0.6);
   --glass-border: rgba(253, 246, 240, 0.5);
   --glass-border-strong: rgba(253, 246, 240, 0.8);
+  --glass-border-strong-input: rgba(140, 85, 100, 0.8);
   --shadow-color: rgba(128, 0, 0, 0.4);
 
   --button-add-bg: rgba(255, 160, 122, 0.6);
@@ -46,6 +47,7 @@
   --glass-bg-strong: rgba(50, 30, 38, 0.6);
   --glass-border: rgba(120, 70, 85, 0.4);
   --glass-border-strong: rgba(140, 85, 100, 0.5);
+  --glass-border-strong-input: rgba(253, 246, 240, 0.5);
   --shadow-color: rgba(0, 0, 0, 0.6);
 
   --button-add-bg: rgba(255, 160, 122, 0.25);

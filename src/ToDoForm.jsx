@@ -27,7 +27,10 @@ function ToDoForm({onAddTask}) {
 	}
 
 	function submitTask() {
-		if (newTask.trim() === '') return;
+		if (newTask.trim() === '') {
+			setIsBoxNeeded(false);
+			return;
+		}
 		onAddTask(newTask);
 		setNewTask('');
 		setIsBoxNeeded(false);
@@ -35,8 +38,10 @@ function ToDoForm({onAddTask}) {
 
 	return (isBoxNeeded ?
 			<>
-				<input type="text" value={newTask} ref={inputRef} onChange={handleInput} onKeyDown={handleKeyDown}/>
+				<div className="addTaskForm">
+				<textarea className="addTaskFormInput" value={newTask} ref={inputRef} onChange={handleInput} onKeyDown={handleKeyDown}/>
 				<button aria-label="Save changes" className="saveButton" type="button" onClick={submitTask}><Check/></button>
+				</div>
 			</> :
 			<div className="buttonLabel">
 				<button aria-label="Add Task" className="addNewTaskButton" type="button" onClick={toggleBoxNeeded}><Plus/>

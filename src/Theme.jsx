@@ -6,7 +6,7 @@ function Theme({ theme, toggleTheme }) {
 			<button aria-label="Change Theme" className="themeButton" type="button" onClick={toggleTheme}>
 				{theme === 'light' ? <Sun/> : <Moon/>}
 			</button>
-			<span className="label">{theme === 'light' ? 'Light Theme' : 'Dark Theme'}</span>
+			<span className="label">{theme === 'light' ? 'Light' : 'Dark'}</span>
 		</div>
 	)
 }

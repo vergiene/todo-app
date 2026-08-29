@@ -1,5 +1,6 @@
 // TODO Нажатие на любое место на задаче открывает редактирование
 // TODO Input растягивает под размер родителя
+// TODO Закрытие input при нажатии на любое место
 import './App.css'
 import useLocalStorage from './useLocalStorage.js';
 import ToDoList from "./ToDoList.jsx";
@@ -20,12 +21,7 @@ function App() {
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	}
 
-	const [tasks, setTasks] = useLocalStorage('tasks', [
-		{id: 1, content: 'Task 1', done: false},
-		{id: 2, content: 'Task 2', done: false},
-		{id: 3, content: 'Task 3', done: false},
-		{id: 4, content: 'Task 4', done: true},
-		{id: 5, content: 'Task 5', done: true},]);
+	const [tasks, setTasks] = useLocalStorage('tasks', []);
 
 	function onAddTask(newTask) {
 		const addedTask = {
@@ -89,8 +85,8 @@ function App() {
 						<span className="label">Clear All</span>
 					</div>
 					<Theme theme={theme} toggleTheme={toggleTheme}/>
-					<ToDoForm onAddTask={onAddTask}/>
 				</div>
+				<ToDoForm onAddTask={onAddTask}/>
 			</header>
 			<main className="content">
 				<section className="activeTasks"><h3 className="cardTitle">ACTIVE TASKS</h3><ToDoList tasks={activeTasks}

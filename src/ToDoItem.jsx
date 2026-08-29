@@ -33,9 +33,9 @@ function ToDoItem({task, toggleTask, handleDelete, handleEditTask}) {
 		setIsEdit(false);
 	}
 
-	return (isEdit ? <li>
-				<input type="text" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
-				<button aria-label="Save changes" className="saveButton" type="button" onClick={editContent}><Check size={15}/>
+	return (isEdit ? <li className="editTaskForm">
+				<textarea className="editTaskFormInput" value={newContent} ref={inputRef} onChange={handleEditInput} onKeyDown={handleKeyDownForEdit}/>
+				<button aria-label="Save changes" className="saveButton" type="button" onClick={editContent}><Check size={20}/>
 				</button>
 			</li> :
 			<li className="taskRow">

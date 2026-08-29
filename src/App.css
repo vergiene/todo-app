@@ -16,6 +16,8 @@
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   box-shadow: 0 5px 15px -5px var(--shadow-color);
+  gap: 7px;
+  flex-wrap: wrap;
 }
 
 .header::before {
@@ -79,6 +81,29 @@
   border: 1px solid var(--button-add-border);
 }
 
+.addTaskForm {
+  flex-basis: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.editTaskFormInput,
+.addTaskFormInput {
+  font-size: inherit;
+  background: none;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  field-sizing: content;
+  resize: none;
+}
+
+.editTaskFormInput:focus,
+.addTaskFormInput:focus {
+  outline: 1px solid var(--glass-border-strong);
+  outline-offset: -1px;
+}
+
 .clearAllButton {
   background: var(--button-clear-bg);
   border: 1px solid var(--button-clear-border);
@@ -116,7 +141,8 @@
   box-shadow: 0 5px 15px -5px var(--shadow-color);
 }
 
-.taskRow {
+.taskRow,
+.editTaskForm {
   display: flex;
   justify-content: space-between;
   text-align: left;
@@ -154,9 +180,8 @@
 }
 
 .saveButton {
-  height: 25px;
-  width: 30px;
-  border-radius: 20px;
+  height: 35px;
+  width: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,7 +215,7 @@
 
 @media (max-width: 450px) {
   .header {
-    padding: 15px;
+    padding: 10px;
   }
 
   .clock {
@@ -209,9 +234,9 @@
     z-index: 1;
   }
 
-  .clearAllButton {
-    width: 44px;
-    height: 44px;
+  .clearAllButton, .themeButton {
+    width: 35px;
+    height: 35px;
   }
 
   .activeTasks, .completedTasks {
