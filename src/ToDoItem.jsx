@@ -25,6 +25,8 @@ function ToDoItem({task, toggleTask, handleDelete, handleEditTask}) {
 	function handleKeyDownForEdit(e) {
 		if (e.key === 'Enter') {
 			editContent();
+		} else if (e.key === 'Escape') {
+			toggleEdit();
 		}
 	}
 
