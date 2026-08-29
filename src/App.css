@@ -191,6 +191,11 @@
   cursor: pointer;
 }
 
+.taskContent {
+  white-space: pre-wrap;
+  padding: 5px;
+}
+
 @media (max-width: 565px) {
   .clockBreak {
     display: inline;

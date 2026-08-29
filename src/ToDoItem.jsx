@@ -23,7 +23,7 @@ function ToDoItem({task, toggleTask, handleDelete, handleEditTask}) {
 	}
 
 	function handleKeyDownForEdit(e) {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && !e.shiftKey) {
 			editContent();
 		} else if (e.key === 'Escape') {
 			toggleEdit();
@@ -43,11 +43,11 @@ function ToDoItem({task, toggleTask, handleDelete, handleEditTask}) {
 			</li> :
 			<li className="taskRow" onClick={() => toggleTask(task.id)}>
 				<div className="taskInfo">
-					<input type="checkbox" id={task.id} checked={task.done} onClick={(e) => {
+					<input type="checkbox" id={task.id} checked={task.done} onChange={(e) => {
 						e.stopPropagation();
 						toggleTask(task.id);
 					}}/>
-					<label htmlFor={task.id}>{task.content}</label>
+					<label htmlFor={task.id} className="taskContent">{task.content}</label>
 				</div>
 				<div className="taskActions">
 					<button aria-label="Edit task" className="taskButton" type="button" onClick={(e) => {

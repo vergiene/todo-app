@@ -21,7 +21,7 @@ function ToDoForm({onAddTask}) {
 	}
 
 	function handleKeyDown(e) {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && !e.shiftKey) {
 			submitTask();
 		} else if (e.key === 'Escape') {
 			toggleBoxNeeded();
